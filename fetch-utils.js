@@ -13,7 +13,7 @@ export async function getFamilies() {
     const response = await client
         .from ('loving_families')
         .select('*, fuzzy_bunnies (*)')
-        .match({ user_id: client.auth.user().id });
+        .match({ 'fuzzy_bunnies.user_id': client.auth.user().id });
     return checkError(response);
 }
 

@@ -20,7 +20,7 @@ async function fetchAndDisplayFamilies() {
         // <div class="family">
         let familyEl = document.createElement('div');
         //    <h3>the Garcia family</h3>
-        familyNameHolder.textContent = 'the ' + family.name + ' family';
+        let familyNameHolder = document.createElement('h3');
         //    <div class="bunnies">
         let bunniesEl = document.createElement('div');
         //        <div class="bunny">Fluffy</div>
@@ -31,7 +31,7 @@ async function fetchAndDisplayFamilies() {
         bunniesEl.classList.add('bunnies');
         familyEl.classList.add('family');
         // put the family name in the name element
-        let familyNameHolder = document.createElement('h3');
+        familyNameHolder.textContent = family.name;
         // for each of this family's bunnies
         for (let bunny of family.fuzzy_bunnies) {
             //make an element with the css class 'bunny', and put the bunny's name in the text content
